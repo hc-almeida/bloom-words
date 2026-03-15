@@ -51,7 +51,11 @@ onMounted(fetchWords)
           type="button"
           aria-label="Alternar challenge mode"
           class="h-7 w-14 rounded-full border border-white/10 bg-slate-700/60 p-1 transition-all"
-          :class="isChallengeMode ? 'bg-red-700/80' : 'bg-slate-700/60'"
+          :disabled="isLoading"
+          :class="[
+            isChallengeMode ? 'bg-red-700/80' : 'bg-slate-700/60',
+            isLoading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer',
+          ]"
           @click="isChallengeMode = !isChallengeMode"
         >
           <span
@@ -127,9 +131,13 @@ onMounted(fetchWords)
       </div>
 
       <button
-        v-if="!isLoading && words.length > 0 && !isChallengeMode"
         type="button"
-        class="mt-14 rounded-full border border-purple-500/50 bg-slate-800 px-8 py-3 text-sm font-semibold tracking-wide text-white shadow-[0_0_15px_rgba(168,85,247,0.3)] transition-all duration-300 hover:scale-105 hover:border-pink-500 hover:shadow-[0_0_25px_rgba(236,72,153,0.5)] focus:outline-none"
+        class="mt-14 rounded-full border border-purple-500/50 bg-slate-800 px-8 py-3 text-sm font-semibold tracking-wide text-white shadow-[0_0_15px_rgba(168,85,247,0.3)] transition-all duration-500 hover:scale-105 hover:border-pink-500 hover:shadow-[0_0_25px_rgba(236,72,153,0.5)] focus:outline-none"
+        :class="
+          !isLoading && words.length > 0 && !isChallengeMode
+            ? 'opacity-100 scale-100'
+            : 'pointer-events-none scale-95 opacity-0'
+        "
         @click="fetchWords"
       >
         ✨ Florescer Novas Palavras
