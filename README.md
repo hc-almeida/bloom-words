@@ -4,6 +4,18 @@ Uma aplicação web de micro-aprendizado focada em expandir o vocabulário de in
 
 Projeto desenvolvido para a disciplina de Front-end Engineering (FIAP).
 
+---
+
+## 👥 Integrantes do Grupo
+
+* LIVIA CARVALHO KELLER
+* GABRIEL VITOR DE SOUZA
+* HELLEN CAROLINE ALMEIDA AZEVEDO
+* LUISA GABRIELE DA PURIFICAÇÃO
+* THIAGO HIDEKI SASAOKA SANCHES
+
+---
+
 ## 🚀 Tecnologias Utilizadas
 
 Este projeto foi construído utilizando as ferramentas mais modernas do ecossistema front-end:
